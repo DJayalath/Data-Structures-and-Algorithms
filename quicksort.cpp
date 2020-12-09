@@ -80,4 +80,6 @@ int main() {
     for (auto v : randomArray) {
         std::cout << v << ", ";
     }
+    
+    return 0;
 }
