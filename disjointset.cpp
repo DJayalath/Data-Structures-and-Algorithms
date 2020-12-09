@@ -56,7 +56,7 @@ public:
 
         // Merge smaller tree into larger tree
         // Guarantees at most log n depth for finding roots
-        // (log * n with path compression)
+        // (log*(n) with path compression)
         if (size[rootP] < size[rootQ]) {
             id[rootP] = rootQ;
             size[rootQ] += size[rootP];
