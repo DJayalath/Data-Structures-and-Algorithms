@@ -2,7 +2,7 @@
 #include <queue>
 #include <set>
 
-#include "graph.hpp"
+#include "Graph.hpp"
 
 // O(V + E) using adjacency list
 // O(V^2) using adjacency matrix

@@ -2,7 +2,7 @@
 #include <cstring>
 #include <set>
 
-#include "graph.hpp"
+#include "Graph.hpp"
 
 // Weighted quick union with path compression
 // id points to parent in tree
