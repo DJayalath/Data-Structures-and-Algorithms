@@ -33,6 +33,7 @@ class MinHeap {
             return (k - 1) >> 1;
         }
 
+        // Swap last with parents until heap property satisfied
         void percolateLastUp() {
 
             int childIndex = size - 1;
@@ -50,6 +51,7 @@ class MinHeap {
 
         }
 
+        // Swap with minimum child until bottom of tree (end of array) reached
         void percolateRootDown() {
 
             int parentIndex = 0;
@@ -83,6 +85,7 @@ class MinHeap {
             return size == 0;
         }
 
+        // Place at last position in tree then percolate up
         bool add(int v) {
 
             // Fail if heap is full
@@ -97,6 +100,7 @@ class MinHeap {
 
         }
 
+        // Put last item in tree in place of root and percolate down
         int removeMin() {
 
             // Check if empty
