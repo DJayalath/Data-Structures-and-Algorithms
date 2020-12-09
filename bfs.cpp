@@ -6,6 +6,7 @@
 
 // O(V + E) using adjacency list
 // O(V^2) using adjacency matrix
+// O(b^d) = O(n) in a tree with depth d and branching factor b
 void bfs(Graph* g, int start) {
 
     std::queue<int> queue;
