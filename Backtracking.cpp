@@ -1,6 +1,15 @@
 #include <iostream>
 #include <cstring>
 
+// Some backtracking improvements
+// - Most constrained variable (choose var with least legal values)
+// - Most constraining variable (var with most constraints on remaing vars)
+// - Forward checking (track remaining legal values for each variable, terminate if any zero)
+// - Arc consistency (check propagated consistency between arcs)
+
+// Alternatively, for dense solution spaces use iterative min-conflicts algorithm
+// - Pick random conflicted variable and pick value that minimises conflicts (and repeat)
+
 // Backtracking to solve the N-Queens problem
 
 // Chess board size
