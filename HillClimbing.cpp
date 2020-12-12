@@ -3,6 +3,10 @@
 #include <cstdlib>
 #include <climits>
 
+// Difference between hill climbing and BEST first search
+// Best-first expands most promising node according to rule (possibly heuristic) (graph search)
+// Hill-climbing expands to find all neighbours and picks best (optimization)
+
 // This example attempts to find a number by flipping bits from starting 32-bit input
 
 void generateNeighbours(int* neighbours, int current) {
