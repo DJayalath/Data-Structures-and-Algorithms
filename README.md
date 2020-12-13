@@ -12,6 +12,9 @@
 - Topological Sort
 - Simple sorts (insertion, bubble, selection)
 - Radix sort
+- Multi-threading (monitors, locks, etc.)
+- OO Design Patterns (Singleton, Composite, etc.)
+- I/O
 - Minimax and Alpha-Beta
 - Supervised Learning
 - Reinforcement Learning
