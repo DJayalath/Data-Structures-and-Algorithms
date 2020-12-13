@@ -1,6 +1,6 @@
 package DesignPatterns;
 
-// Ensures a class only has one method
+// Ensures a class only has one instance
 public class Singleton {
     private static Singleton _instance = null;
 
