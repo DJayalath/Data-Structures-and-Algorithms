@@ -1,6 +1,4 @@
 ## TODO
-- Stacks
-- Queues
 - A* Search
 - Simulated Annealing
 - Genetic Algorithms
