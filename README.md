@@ -13,7 +13,7 @@
 - Simple sorts (insertion, bubble, selection)
 - Radix sort
 - Multi-threading (monitors, locks, etc.)
-- OO Design Patterns (Singleton, Composite, etc.)
+- Implementation example of MVC pattern
 - I/O
 - Minimax and Alpha-Beta
 - Supervised Learning
