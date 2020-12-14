@@ -3,7 +3,6 @@
 - A* Search
 - Simulated Annealing
 - Genetic Algorithms
-- Tree Stuff
 - Tries
 - Dijkstra
 - MSTs (Prim / Kruskal)
