@@ -178,6 +178,22 @@ int pairwiseSwap(int n) {
     return ((n & 0xaaaaaaaa) >> 1) | ((n & 0x55555555) << 1);
 }
 
+// Swap the values of two distinct numbers without a temporary variable
+void XORSwap(int* a, int* b) {
+    (*a) = (*a)^(*b); // Sets all mismatching bits to 1 : A = A xor B = C
+    (*b) = (*a)^(*b); // Derives a : (A xor B) xor B = C xor B = A
+    (*a) = (*b)^(*a); // Derives b : (new B) xor (A xor B) = A xor C = B
+}
+
+// Swap values of two numbers without temporary variable
+void AddSwap(int* a, int* b) {
+    if (a != b) {
+        (*a) = (*a) + (*b); // a = a + b = c
+        (*b) = (*a) - (*b); // c - b = a
+        (*a) = (*a) - (*b); // c - a = b
+    }
+}
+
 // // Draw horizontal line from x1 to x2 in monochrome screen buffer
 // void drawLine(uint8_t* screen, int width, int height, int x1, int x2, int y) {
 
