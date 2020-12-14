@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 
 struct Node {
     int key;
@@ -67,6 +68,29 @@ class BST {
                 std::cout << s->key << std::endl;
                 inOrderWalk(s->rightChild);
             }
+        }
+
+        // Simple level-order traversal of the tree in O(n)
+        // Just BFS but no need for discovered set since trees are acyclic
+        void bfsTraversal(Node* s) {
+            std::queue<Node*> q;
+            q.push(s);
+
+            while (!q.empty()) {
+                Node* v = q.front();
+                q.pop();
+                std::cout << v->key << ",";
+
+                if (v->leftChild) {
+                    q.push(v->leftChild);
+                }
+                if (v->rightChild) {
+                    q.push(v->rightChild);
+                }
+            }
+
+            std::cout << std::endl;
+
         }
 
         // Search for node with key O(h) = O(logn)
@@ -218,4 +242,6 @@ int main() {
     // Remove root
     t.remove(t.root);
     t.inOrderWalk(t.root);
+
+    t.bfsTraversal(t.root);
 }
