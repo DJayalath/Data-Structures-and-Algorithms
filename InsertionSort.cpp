@@ -24,7 +24,7 @@ void insertionSort(int* data, int length) {
 // Easily derived tail recursive version
 void rInsertionSort(int* data, int start, int length) {
 
-    if (start >= length - 1) return;
+    if (start >= length) return;
 
     int key = data[start];
     int j = start - 1;
