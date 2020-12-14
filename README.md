@@ -8,7 +8,6 @@
 - MSTs (Prim / Kruskal)
 - Maximum Matching
 - Topological Sort
-- Simple sorts (insertion, bubble, selection)
 - Radix sort
 - Multi-threading (monitors, locks, etc.)
 - Implementation example of MVC pattern
