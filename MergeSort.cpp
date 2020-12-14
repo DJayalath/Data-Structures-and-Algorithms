@@ -6,6 +6,9 @@ void merge(int* data, int start, int mid, int end);
 // Merge Sort is asymptotically optimal = O(nlogn)
 // STABLE but NOT IN PLACE => O(n) memory complexity from arrays used to merge
 
+// Java's Arrays.sort (sorts arrays) uses dual-pivot QuickSort on primitives (because instability has no effect), but MergeSort on objects (needs to be stable)!
+// Java's Collections.sort calls underlying Arrays.sort and will obviously use MergeSort since collections store objects.
+
 // Like quicksort we can improve it using hybrid sorts e.g. insertion when array size is smalL!
 
 void mergeSort(int* data, int start, int end) {

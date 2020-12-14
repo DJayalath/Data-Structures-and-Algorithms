@@ -16,6 +16,9 @@ int partition(int* data, int pivot, int start, int end);
 // C++ std requires an asympotically optimal sort algorithm so compiler implementations can't use QuickSort.
 // Instead, it uses IntroSort which is a hybrid using QuickSort, HeapSort, and Insertion Sort
 
+// Java's Arrays.sort (sorts arrays) uses dual-pivot QuickSort on primitives (because instability has no effect), but MergeSort on objects (needs to be stable)!
+// Java's Collections.sort calls underlying Arrays.sort and will obviously use MergeSort since collections store objects.
+
 // start and end are inclusive array indices
 void quickSort(int* data, int start, int end) {
 
