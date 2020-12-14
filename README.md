@@ -16,5 +16,6 @@
 - Minimax and Alpha-Beta
 - Supervised Learning
 - Reinforcement Learning
+- Java/C++ Collection / STL
 
 Note to self: Choose best suited language rather than sticking with C/C++
