@@ -1,11 +1,12 @@
 ## TODO
+- Tree balancing strategies (AVL/Red-Black)
 - A* Search
 - Simulated Annealing
 - Genetic Algorithms
 - Tree Stuff
 - Tries
 - Dijkstra
-- Prim / Kruskal
+- MSTs (Prim / Kruskal)
 - Maximum Matching
 - Topological Sort
 - Simple sorts (insertion, bubble, selection)
