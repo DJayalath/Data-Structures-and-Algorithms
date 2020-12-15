@@ -5,6 +5,7 @@
 
 // Reverse bits of number
 void reverseBits(uint32_t a) {
+    uint32_t b = a;
     for (int i = 0; i * 2 < 32; i++) {
         // Swap bits i and 31 - i
         int j = 31 - i;
@@ -28,9 +29,17 @@ void reverseBits(uint32_t a) {
         }
     }
 
+    printf("%u",a);
+
     // ALTERNATIVELY: swap left 16 and right 16 with shift and or, then every set of 8, then 4, etc.
 
-    printf("%u",a);
+    b = (b >> 16) | (b << 16);
+    b = ((b & 0xff00ff00) >> 8) | ((b & 0x00ff00ff) << 8);
+    b = ((b & 0xf0f0f0f0) >> 4) | ((b & 0x0f0f0f0f) << 4);
+    b = ((b & 0xcccccccc) >> 2) | ((b & 0x33333333) << 2);
+    b = ((b & 0xaaaaaaaa) >> 1) | ((b & 0x55555555) << 1);
+
+    printf("\n%u", b);
 
 }
 
@@ -45,6 +54,16 @@ void missingNumber(int* data, int length) {
     int expectedSum = (length * (length + 1)) / 2;
 
     printf("Missing %i", expectedSum - sum);
+
+    // Alternatively use XOR to recover the data
+    int x = 0;
+    int i = 0;
+
+    for (i = 0; i < length; i++) {
+        x = x ^ i ^ data[i];
+    }
+
+    printf("\nMissing %i", x^i);
 
 }
 
