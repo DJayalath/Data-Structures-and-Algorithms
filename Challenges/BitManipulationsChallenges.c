@@ -1,6 +1,95 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
+
+// Reverse bits of number
+void reverseBits(uint32_t a) {
+    for (int i = 0; i * 2 < 32; i++) {
+        // Swap bits i and 31 - i
+        int j = 31 - i;
+        bool iSet = (a & (1 << i)) > 0;
+        bool jSet = (a & (1 << j)) > 0;
+
+        if (iSet) {
+            // Set j
+            a |= (1 << j);
+        } else {
+            // Unset j
+            a &= ~(1 << j);
+        }
+
+        if (jSet) {
+            // Set i
+            a |= (1 << i);
+        } else {
+            // Unset i
+            a &= ~(1 << i);
+        }
+    }
+
+    // ALTERNATIVELY: swap left 16 and right 16 with shift and or, then every set of 8, then 4, etc.
+
+    printf("%u",a);
+
+}
+
+// Given array of numbers in range [0,n] determine the only missing number
+void missingNumber(int* data, int length) {
+
+    int sum = 0;
+    for (int i = 0; i < length; i++) {
+        sum += data[i];
+    }
+
+    int expectedSum = (length * (length + 1)) / 2;
+
+    printf("Missing %i", expectedSum - sum);
+
+}
+
+// Count number of bits for each number 0 <= i <= num and return list
+void numBits(int num) {
+
+    uint8_t* counts = (uint8_t*) calloc(num + 1, sizeof(uint8_t));
+    for (int i = 1; i <= num; i++) {
+        counts[i] = counts[i & (i - 1)] + 1;
+    }
+
+    printf("[");
+    for (int i = 0; i <= num; i++) {
+        printf("%i,", counts[i]);
+    }
+    printf("]");
+
+}
+
+// Number of one bits
+int numOnes(int a) {
+
+    uint8_t count = 0;
+    while (a != 0) {
+        a &= a - 1; // Unsets rightmost one
+        count++;
+    }
+    return count;
+
+}
+
+// Sum two ints without using + or -
+int sumOfTwoInts(int a, int b) {
+
+    int c;
+    while (b != 0) {
+        // 0011 + 1010 = 1101
+        c = a & b; // carry 0011 AND 1010 = 0010
+        a = a ^ b; // sum 0011 XOR 1010 = 1001
+        b = c << 1; // carry shift left 0100
+    // Now add iteratively until carry is zero
+    }
+
+    return a;
+}
 
 int insertMintoN(int N, int M, uint8_t i, uint8_t j) {
     // TODO: Check j >= i and M not erroneous
@@ -210,5 +299,10 @@ int main() {
     // binaryToString(0.56123615);
     // printf("%i", flipBitToWin(1775));
     // nextNumber(13);
-    printf("%i", numBitsToFlip(29, 15));
+    // printf("%i", numBitsToFlip(29, 15));
+    // printf("%i", sumOfTwoInts(-5, -2));
+    // numBits(5);
+    // int input[] = {9,6,4,2,3,5,7,0,1};
+    // missingNumber(input, 9);
+    reverseBits(-1-2);
 }
