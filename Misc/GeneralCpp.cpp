@@ -58,4 +58,8 @@ int main() {
         ifile.close();
     }
 
+    // C++ STL
+    // STL Map uses Binary Search Tree O(logn) in comparison to hash table
+    // 
+
 }
