@@ -1,5 +1,6 @@
 ## TODO
 - HashTable
+- Iterators
 - Tree balancing strategies (AVL/Red-Black)
 - A* Search
 - Simulated Annealing
