@@ -3,6 +3,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// 2^5 = 32 hence shift starts as 5
+void recursiveReverseBits(uint32_t a, uint8_t shift) {
+
+    // Base case
+    if (!shift) {
+        printf("\n%u", a);
+        return;
+    };
+
+    // Assume even width
+    shift--;
+
+    uint32_t mask = 0;
+
+    int i = 0;
+    uint8_t flip = 0;
+    while (i < 32) {
+        // Set bit
+        mask |= ((i >> shift) & 1) << i;
+        i++;
+    }
+
+    uint32_t mask_c = ~mask;
+    uint8_t width = 1 << shift;
+
+    a = ((a & mask) >> width) | ((a & mask_c) << width);
+    recursiveReverseBits(a, shift);
+}
+
 // Reverse bits of number
 void reverseBits(uint32_t a) {
     uint32_t b = a;
@@ -324,4 +353,5 @@ int main() {
     // int input[] = {9,6,4,2,3,5,7,0,1};
     // missingNumber(input, 9);
     reverseBits(-1-2);
+    recursiveReverseBits(-1-2, 5);
 }
