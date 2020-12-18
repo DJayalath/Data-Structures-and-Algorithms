@@ -62,9 +62,9 @@ uint8_t countBits(int n) {
     }
     return count;
 
-    // Method 3
+    // Method 3 (if in a loop, sequential access fast because cache hit always due to sequential prefetch!)
+    // Random access depends on if the array fits in the cache.
     return pre[(uint32_t) n];
-
 
 }
 
